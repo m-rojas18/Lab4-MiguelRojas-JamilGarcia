@@ -536,15 +536,15 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese la distancia capaz de recorrer: ");
                                                             int distancia = sc.nextInt();
 
-                                                            System.out.println("Ingrese la altitud: ");
-                                                            int altitud = sc.nextInt();
+                                                            System.out.println("Ingrese la altitud: (double)");
+                                                            double altitud = sc.nextInt();
                                                             
                                                              System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Quimico Solido\n "
                                                                     + "[2] Propelente Liquido\n");
                                                             int opcion_menuComb = sc.nextInt(); 
                                                              
-                                                            String combustible;
+                                                            String combustible= "";
                                                             switch (opcion_menuComb) {
                                                                 case 1:
                                                                     combustible = "Quimico Solido"; 
@@ -565,7 +565,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese el numero de propulsores:");
                                                             int Propulsores = sc.nextInt();
                                                             
-                                                            
+                                                            lista_medioTrans.add(new Nave_Espacial(Propulsores, combustible, PlanetaP, PlanetaL, cantidad_combustible, distancia, altitud));
                                                             
                                                             break;
                                                         case 2: //Modificar Naves
@@ -606,15 +606,15 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese la distancia capaz de recorrer: ");
                                                             int distancia = sc.nextInt();
 
-                                                            System.out.println("Ingrese la altitud: ");
-                                                            int altitud = sc.nextInt();
+                                                            System.out.println("Ingrese la altitud: (double)");
+                                                            double altitud = sc.nextInt();
                                                             
                                                              System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Quimico Solido\n "
                                                                     + "[2] Propelente Liquido\n");
                                                             int opcion_menuComb = sc.nextInt(); 
                                                              
-                                                            String combustible;
+                                                            String combustible ="";
                                                             switch (opcion_menuComb) {
                                                                 case 1:
                                                                     combustible = "Quimico Solido"; 
@@ -635,9 +635,11 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese el numero de separaciones: ");
                                                             int separaciones = sc.nextInt();
 
+                                                            lista_medioTrans.add(new Cohete(separaciones, combustible, PlanetaP, PlanetaL, cantidad_combustible, distancia, altitud));
                                                             break;
                                                         case 2: //Modificar Cohete
 
+                                                            
                                                             break;
                                                         case 3: //Eliminar Cohete
 
