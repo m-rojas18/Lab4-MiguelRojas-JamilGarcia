@@ -12,7 +12,7 @@ public class Lab4_MiguelRojasJamilGarcia {
     static ArrayList<Ingenieros> lista_ingenieros = new ArrayList();
     static ArrayList<Medios_Transporte> lista_medioTrans = new ArrayList();
     static int posicion_ing = 0;
-    static ArrayList<Primates> lista_primates = new ArrayList();
+    static ArrayList<Mono> lista_monos = new ArrayList();
     static ArrayList<Gorila> lista_gorilas = new ArrayList();
 
     public static void main(String[] args) throws ParseException {
@@ -341,7 +341,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                     while (flag_menuM) {
                                                         System.out.print("------------------\n"
                                                                 + "Menu Primates\n"
-                                                                + "[1] Crear Mono\n"
+                                                                + "[1] Crear Primate\n"
                                                                 + "[2] Modificar Primate\n"
                                                                 + "[3] Eliminar Primate\n"
                                                                 + "[4] Listar Primates\n"
@@ -445,6 +445,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                             comida_km, planeta_primate, lugar_primate,
                                                                             nombre_primate, grupo_sanguineoP, sexo_primate, 
                                                                             altura_primate, peso_primate);
+                                                                    lista_monos.add(mono);
                                                                     System.out.println("Se creo exitosamente el primate!!\n");
                                                                 } else {
                                                                     //Gorila
@@ -465,6 +466,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                             planeta_primate, lugar_primate, nombre_primate , 
                                                                             grupo_sanguineoP, sexo_primate, 
                                                                             altura_primate, peso_primate);
+                                                                    lista_gorilas.add(g);
                                                                     System.out.println("Se creo exitosamente el primate!!\n");
                                                                 }
                                                                 break;
