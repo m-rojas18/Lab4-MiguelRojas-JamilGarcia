@@ -321,7 +321,6 @@ public class Lab4_MiguelRojasJamilGarcia {
                                 System.out.println();
                                 switch (op_menu) {
                                     case 1:
-                                        //Menu seres vivos
                                         System.out.print("------------------\n"
                                                 + "-----Menu Seres Vivos-----\n\n"
                                                 + "[1] Menu Primates\n"

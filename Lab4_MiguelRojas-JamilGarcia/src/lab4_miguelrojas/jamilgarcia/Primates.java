@@ -51,6 +51,7 @@ public class Primates extends SeresVivos{
         this.P_Nacimiento = P_Nacimiento;
     }
 
+
     @Override
     public String toString() {
         return super.toString() + "Primates{" + "P_MTrans=" + ", P_Comida=" + P_Comida + ", P_CKiloM=" + P_CKiloM + ", P_Planeta=" + P_Planeta + ", P_Nacimiento=" + P_Nacimiento + '}';
