@@ -6,12 +6,12 @@ public class SeresVivos {
     private String S_GSang; 
     private String S_Sexo; 
     private double S_Altura; 
-    private double S_Peso; 
+    private int S_Peso; 
 
     public SeresVivos() {
     }
 
-    public SeresVivos(String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, double S_Peso) {
+    public SeresVivos(String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, int S_Peso) {
         this.S_Nombre = S_Nombre;
         this.S_GSang = S_GSang;
         this.S_Sexo = S_Sexo;
@@ -51,11 +51,11 @@ public class SeresVivos {
         this.S_Altura = S_Altura;
     }
 
-    public double getS_Peso() {
+    public int getS_Peso() {
         return S_Peso;
     }
 
-    public void setS_Peso(double S_Peso) {
+    public void setS_Peso(int S_Peso) {
         this.S_Peso = S_Peso;
     }
 

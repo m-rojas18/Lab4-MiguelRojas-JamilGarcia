@@ -8,7 +8,7 @@ public class Gorila extends Primates{
         super(); 
     }
 
-    public Gorila(int G_IQ, Medios_Transporte P_MTrans, int P_Comida, int P_CKiloM, String P_Planeta, String P_Nacimiento, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, double S_Peso) {
+    public Gorila(int G_IQ, Medios_Transporte P_MTrans, int P_Comida, int P_CKiloM, String P_Planeta, String P_Nacimiento, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, int S_Peso) {
         super(P_MTrans, P_Comida, P_CKiloM, P_Planeta, P_Nacimiento, S_Nombre, S_GSang, S_Sexo, S_Altura, S_Peso);
         this.G_IQ = G_IQ;
     }

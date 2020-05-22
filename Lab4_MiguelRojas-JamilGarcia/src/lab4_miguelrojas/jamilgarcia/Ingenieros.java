@@ -7,7 +7,7 @@ public class Ingenieros extends SeresVivos{
     
     private String I_Correo; 
     private String I_Usuario; 
-    private ArrayList <String> I_Idiomas; 
+    private ArrayList <String> I_Idiomas = new ArrayList(); 
     private String I_Pass; 
     private Date I_Fecha; 
 
@@ -15,11 +15,10 @@ public class Ingenieros extends SeresVivos{
         super(); 
     }
 
-    public Ingenieros(String I_Correo, String I_Usuario, ArrayList<String> I_Idiomas, String I_Pass, Date I_Fecha, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, double S_Peso) {
+    public Ingenieros(String I_Correo, String I_Usuario, String I_Pass, Date I_Fecha, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, int S_Peso) {
         super(S_Nombre, S_GSang, S_Sexo, S_Altura, S_Peso);
         this.I_Correo = I_Correo;
         this.I_Usuario = I_Usuario;
-        this.I_Idiomas = I_Idiomas;
         this.I_Pass = I_Pass;
         this.I_Fecha = I_Fecha;
     }

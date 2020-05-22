@@ -12,7 +12,7 @@ public class Primates extends SeresVivos{
         super(); 
     }
 
-    public Primates(Medios_Transporte P_MTrans, int P_Comida, int P_CKiloM, String P_Planeta, String P_Nacimiento, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, double S_Peso) {
+    public Primates(Medios_Transporte P_MTrans, int P_Comida, int P_CKiloM, String P_Planeta, String P_Nacimiento, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, int S_Peso) {
         super(S_Nombre, S_GSang, S_Sexo, S_Altura, S_Peso);
         this.P_MTrans = P_MTrans;
         this.P_Comida = P_Comida;
