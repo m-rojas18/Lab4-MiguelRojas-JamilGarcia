@@ -10,12 +10,13 @@ public class Lab4_MiguelRojasJamilGarcia {
 
     static ArrayList<String> lista_usuarios = new ArrayList();
     static ArrayList<Ingenieros> lista_ingenieros = new ArrayList();
+    static ArrayList<Medios_Transporte> lista_medioTrans = new ArrayList();
     static int posicion_ing = 0;
 
     public static void main(String[] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in);
-        
+
         //Prueba
         lista_usuarios.add("mrojas");
         Ingenieros ing0 = new Ingenieros("tgrew", "hola", "hola", new Date(), "Miguel", "A", "Masculino", 1.80, 190);
@@ -330,14 +331,331 @@ public class Lab4_MiguelRojasJamilGarcia {
                                         break;
                                     case 2:
                                         //Menu medios transporte
-                                        System.out.print("------------------\n"
-                                                + "----- Menu Medios Transporte-----\n"
-                                                + "[1] Menu Helicopteros\n"
-                                                + "[2] Menu Avion Comerciales\n"
-                                                + "[3] Menu Naves Espaciales\n"
-                                                + "[4] Menu Cohetes\n"
-                                                + "[5] Salir\n"
-                                                + "Seleccione una opcion: ");
+                                        char flag_menuMT = 's';
+                                        while (flag_menuMT == 's') {
+                                            System.out.print("------------------\n"
+                                                    + "----- Menu Medios Transporte-----\n"
+                                                    + "[1] Menu Helicopteros\n"
+                                                    + "[2] Menu Avion Comerciales\n"
+                                                    + "[3] Menu Naves Espaciales\n"
+                                                    + "[4] Menu Cohetes\n"
+                                                    + "[5] Salir\n"
+                                                    + "Seleccione una opcion: ");
+                                            int opcion_menuMT = sc.nextInt();
+
+                                            switch (opcion_menuMT) {
+                                                case 1: //Menu Heli
+                                                    System.out.println("------------------\n"
+                                                            + "----- Menu Helicoptero-----\n"
+                                                            + "[1] Crear Un Helicoptero \n"
+                                                            + "[2] Modificar Un Helicoptero \n"
+                                                            + "[3] Eliminar Un Helicoptero \n"
+                                                            + "[4] Listar Un Helicoptero \n"
+                                                            + "Seleccione una opcion: ");
+                                                    int opcion_menuH = sc.nextInt();
+
+                                                    switch (opcion_menuH) {
+                                                        case 1: //Crear Heli
+                                                            
+                                                            System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                            int cantidad_combustible = sc.nextInt();
+
+                                                            while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                cantidad_combustible = sc.nextInt();
+                                                            }
+
+                                                            System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                            int distancia = sc.nextInt();
+
+                                                            System.out.println("Ingrese la altitud: (double)");
+                                                            double altitud = sc.nextInt();
+
+                                                            System.out.println("Ingrese el tipo de combustible: \n"
+                                                                    + "[1] Super\n "
+                                                                    + "[2] Regular\n "
+                                                                    + "[3] Diesel\n ");
+                                                            int opcion_menuComb = sc.nextInt(); 
+                                                             
+                                                            String combustible = "";
+                                                            switch (opcion_menuComb) {
+                                                                case 1:
+                                                                    combustible = "Super"; 
+                                                                    break;
+                                                                case 2:
+                                                                    combustible = "Regular"; 
+                                                                    break;
+                                                                case 3:
+                                                                    combustible = "Diesel"; 
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese un valor valido!!");
+                                                            }
+                                                            
+                                                            System.out.println("Escriba el pais de partida: ");
+                                                            String PaisP = sc.next(); 
+                                                            
+                                                            System.out.println("Escriba el pais de llegada: ");
+                                                            String PaisL = sc.next(); 
+                                                            
+                                                            System.out.println("Ingrese el numero de helices del Helicoptero: ");
+                                                            int n_helices = sc.nextInt(); 
+                                                            
+                                                            System.out.println("Ingrese el numero de patas del Helicoptero: ");
+                                                            int n_patas = sc.nextInt(); 
+                                                            
+                                                            lista_medioTrans.add(new Helicoptero(n_helices, n_patas, combustible, PaisP, PaisL, cantidad_combustible, distancia, altitud));
+                                                            
+                                                            break;
+                                                        case 2: //Modificar Heli
+
+                                                            break;
+                                                        case 3: //Eliminar Heli
+
+                                                            break;
+                                                        case 4: //Listar Heli
+
+                                                            break;
+                                                        default:
+                                                            System.out.println("Error!Ingrese una opcion Valida!!");
+                                                    }
+
+                                                    break;
+                                                case 2: //Menu Avion
+                                                    System.out.println("------------------\n"
+                                                            + "----- Menu Avion-----\n"
+                                                            + "[1] Crear Un Avion \n"
+                                                            + "[2] Modificar Un Avion \n"
+                                                            + "[3] Eliminar Un Avion \n"
+                                                            + "[4] Listar Un Avion \n"
+                                                            + "Seleccione una opcion: ");
+                                                    int opcion_menuA = sc.nextInt();
+
+                                                    switch (opcion_menuA) {
+                                                        case 1: //Crear Avion
+                                                            
+                                                            System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                            int cantidad_combustible = sc.nextInt();
+
+                                                            while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                cantidad_combustible = sc.nextInt();
+                                                            }
+
+                                                            System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                            int distancia = sc.nextInt();
+
+                                                            System.out.println("Ingrese la altitud: (double)");
+                                                            double altitud = sc.nextInt();
+                                                            
+                                                            System.out.println("Ingrese el tipo de combustible: \n"
+                                                                    + "[1] Super\n "
+                                                                    + "[2] Regular\n "
+                                                                    + "[3] Diesel\n ");
+                                                            int opcion_menuComb = sc.nextInt(); 
+                                                             
+                                                            String combustible = "";
+                                                            switch (opcion_menuComb) {
+                                                                case 1:
+                                                                    combustible = "Super"; 
+                                                                    break;
+                                                                case 2:
+                                                                    combustible = "Regular"; 
+                                                                    break;
+                                                                case 3:
+                                                                    combustible = "Diesel"; 
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese un valor valido!!");
+                                                            }
+                                                            
+                                                            System.out.println("Escriba el pais de partida: ");
+                                                            String PaisP = sc.next(); 
+                                                            
+                                                            System.out.println("Escriba el pais de llegada: ");
+                                                            String PaisL = sc.next(); 
+                                                            
+                                                            System.out.println("Ingrese el numero de pasajeros: ");
+                                                            int n_pasajeros = sc.nextInt(); 
+                                                            
+                                                            System.out.println("Funciona el piloto automatico?\n"
+                                                                    + "[1] Si \n"
+                                                                    + "[2] No\n");
+                                                            int opcion_Pilot = sc.nextInt(); 
+                                                            String Pilot =""; 
+                                                            switch (opcion_Pilot) {
+                                                                case 1:
+                                                                    Pilot = "Si"; 
+                                                                    break;
+                                                                case 2:
+                                                                    Pilot = "No"; 
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese opcion validad");
+                                                            }
+                                                            
+                                                            lista_medioTrans.add(new Avion_Comercial(n_pasajeros, Pilot, combustible, PaisP, PaisL, cantidad_combustible, distancia, altitud));
+                                                            
+                                                            break;
+                                                        case 2: //Modificar Avion
+
+                                                            break;
+                                                        case 3: //Eliminar Avion
+
+                                                            break;
+                                                        case 4: //Listar Avion
+
+                                                            break;
+                                                        default:
+                                                            System.out.println("Error!Ingrese una opcion Valida!!");
+                                                    }
+
+                                                    break;
+
+                                                case 3: //Menu Naves
+
+                                                    System.out.println("------------------\n"
+                                                            + "----- Menu Naves-----\n"
+                                                            + "[1] Crear Una Nave \n"
+                                                            + "[2] Modificar Una Nave \n"
+                                                            + "[3] Eliminar Una Nave \n"
+                                                            + "[4] Listar Una Nave \n"
+                                                            + "Seleccione una opcion: ");
+                                                    int opcion_menuN = sc.nextInt();
+
+                                                    switch (opcion_menuN) {
+                                                        case 1: //Crear Naves
+                                                            
+                                                            System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                            int cantidad_combustible = sc.nextInt();
+
+                                                            while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                cantidad_combustible = sc.nextInt();
+                                                            }
+
+                                                            System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                            int distancia = sc.nextInt();
+
+                                                            System.out.println("Ingrese la altitud: ");
+                                                            int altitud = sc.nextInt();
+                                                            
+                                                             System.out.println("Ingrese el tipo de combustible: \n"
+                                                                    + "[1] Quimico Solido\n "
+                                                                    + "[2] Propelente Liquido\n");
+                                                            int opcion_menuComb = sc.nextInt(); 
+                                                             
+                                                            String combustible;
+                                                            switch (opcion_menuComb) {
+                                                                case 1:
+                                                                    combustible = "Quimico Solido"; 
+                                                                    break;
+                                                                case 2:
+                                                                    combustible = "Propelente Liquido"; 
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese un valor valido!!");
+                                                            }
+                                                            
+                                                            System.out.println("Escriba el Planeta de partida: ");
+                                                            String PlanetaP = sc.next(); 
+                                                            
+                                                            System.out.println("Escriba el Planeta de llegada: ");
+                                                            String PlanetaL = sc.next(); 
+
+                                                            System.out.println("Ingrese el numero de propulsores:");
+                                                            int Propulsores = sc.nextInt();
+                                                            
+                                                            break;
+                                                        case 2: //Modificar Naves
+
+                                                            break;
+                                                        case 3: //Eliminar Naves
+
+                                                            break;
+                                                        case 4: //Listar Naves
+
+                                                            break;
+                                                        default:
+                                                            System.out.println("Error!Ingrese una opcion Valida!!");
+                                                    }
+                                                    break;
+                                                case 4: //Menu Cohete
+
+                                                    System.out.println("------------------\n"
+                                                            + "----- Menu Cohete-----\n"
+                                                            + "[1] Crear Un Cohete \n"
+                                                            + "[2] Modificar Un Cohete \n"
+                                                            + "[3] Eliminar Un Cohete \n"
+                                                            + "[4] Listar Un Cohete \n"
+                                                            + "Seleccione una opcion: ");
+                                                    int opcion_menuC = sc.nextInt();
+
+                                                    switch (opcion_menuC) {
+                                                        case 1: //Crear Cohete
+                                                            
+                                                            System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                            int cantidad_combustible = sc.nextInt();
+
+                                                            while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                cantidad_combustible = sc.nextInt();
+                                                            }
+
+                                                            System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                            int distancia = sc.nextInt();
+
+                                                            System.out.println("Ingrese la altitud: ");
+                                                            int altitud = sc.nextInt();
+                                                            
+                                                             System.out.println("Ingrese el tipo de combustible: \n"
+                                                                    + "[1] Quimico Solido\n "
+                                                                    + "[2] Propelente Liquido\n");
+                                                            int opcion_menuComb = sc.nextInt(); 
+                                                             
+                                                            String combustible;
+                                                            switch (opcion_menuComb) {
+                                                                case 1:
+                                                                    combustible = "Quimico Solido"; 
+                                                                    break;
+                                                                case 2:
+                                                                    combustible = "Propelente Liquido"; 
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese un valor valido!!");
+                                                            }
+                                                            
+                                                            System.out.println("Escriba el Planeta de partida: ");
+                                                            String PlanetaP = sc.next(); 
+                                                            
+                                                            System.out.println("Escriba el Planeta de llegada: ");
+                                                            String PlanetaL = sc.next(); 
+                                                            
+                                                            System.out.println("Ingrese el numero de separaciones: ");
+                                                            int separaciones = sc.nextInt();
+
+                                                            break;
+                                                        case 2: //Modificar Cohete
+
+                                                            break;
+                                                        case 3: //Eliminar Cohete
+
+                                                            break;
+                                                        case 4: //Listar Cohete
+
+                                                            break;
+                                                        default:
+                                                            System.out.println("Error!Ingrese una opcion Valida!!");
+                                                    }
+
+                                                    break;
+                                                case 5: //Menu Salir
+
+                                                    break;
+                                                default:
+                                                    System.out.println("Ingrese un numero valido!!!");
+                                            }
+                                        }
                                         break;
                                     case 3:
                                         //Opcion viajar
@@ -373,4 +691,10 @@ public class Lab4_MiguelRojasJamilGarcia {
         }
     }
 
+    public static void ImprimirArrayList(ArrayList a) {
+        for (int i = 0; i < a.size(); i++) {
+            System.out.println("---------------------------------------");
+            System.out.println(i + ". " + a.get(i).toString());
+        }
+    }
 }
