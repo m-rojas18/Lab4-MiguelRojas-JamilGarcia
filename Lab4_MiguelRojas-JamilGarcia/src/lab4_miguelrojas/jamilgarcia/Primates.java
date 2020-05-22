@@ -11,14 +11,13 @@ public class Primates extends SeresVivos{
         super(); 
     }
 
-    public Primates(Medios_Transporte P_MTrans, int P_Comida, int P_CKiloM, String P_Planeta, String P_Nacimiento, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, int S_Peso) {
+    public Primates(int P_Comida, int P_CKiloM, String P_Planeta, String P_Nacimiento, String S_Nombre, String S_GSang, String S_Sexo, double S_Altura, int S_Peso) {
         super(S_Nombre, S_GSang, S_Sexo, S_Altura, S_Peso);
         this.P_Comida = P_Comida;
         this.P_CKiloM = P_CKiloM;
         this.P_Planeta = P_Planeta;
         this.P_Nacimiento = P_Nacimiento;
     }
-
 
     public int getP_Comida() {
         return P_Comida;
@@ -52,6 +51,11 @@ public class Primates extends SeresVivos{
         this.P_Nacimiento = P_Nacimiento;
     }
 
+
+    @Override
+    public String toString() {
+        return super.toString() + "Primates{" + "P_MTrans=" + ", P_Comida=" + P_Comida + ", P_CKiloM=" + P_CKiloM + ", P_Planeta=" + P_Planeta + ", P_Nacimiento=" + P_Nacimiento + '}';
+    }
     
     
     
