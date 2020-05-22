@@ -15,7 +15,7 @@ public class Lab4_MiguelRojasJamilGarcia {
     public static void main(String[] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in);
-        
+
         //Prueba
         lista_usuarios.add("mrojas");
         Ingenieros ing0 = new Ingenieros("tgrew", "hola", "hola", new Date(), "Miguel", "A", "Masculino", 1.80, 190);
@@ -320,7 +320,6 @@ public class Lab4_MiguelRojasJamilGarcia {
                                 System.out.println();
                                 switch (op_menu) {
                                     case 1:
-                                        //Menu seres vivos
                                         System.out.print("------------------\n"
                                                 + "-----Menu Seres Vivos-----\n\n"
                                                 + "[1] Menu Primates\n"
