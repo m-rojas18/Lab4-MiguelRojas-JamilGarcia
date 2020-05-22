@@ -3,6 +3,7 @@ package lab4_miguelrojas.jamilgarcia;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Lab4_MiguelRojasJamilGarcia {
@@ -14,6 +15,11 @@ public class Lab4_MiguelRojasJamilGarcia {
     public static void main(String[] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in);
+        
+        //Prueba
+        lista_usuarios.add("mrojas");
+        Ingenieros ing0 = new Ingenieros("tgrew", "hola", "hola", new Date(), "Miguel", "A", "Masculino", 1.80, 190);
+        lista_ingenieros.add(ing0);
 
         char resp = 's';
         while (resp == 's') {
