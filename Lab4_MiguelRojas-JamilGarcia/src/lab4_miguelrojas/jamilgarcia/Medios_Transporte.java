@@ -58,24 +58,35 @@ public class Medios_Transporte {
 
     public boolean Viajar(int distanciaVia) {
         int comidaTot = 0, comidaKMTot = 0;
+        boolean viajeComp = true; 
 
+        //Primates
         if (lista_primates.size() < 1) {
-            return false;
+            viajeComp = false; 
         } else {
             for (int i = 0; i < lista_primates.size(); i++) {
                 comidaTot += lista_primates.get(i).getP_Comida();
                 comidaKMTot = lista_primates.get(i).getP_CKiloM();
             }
             if ((comidaKMTot * distanciaVia) > comidaTot) {
-                return false;
+                viajeComp = false;
             }
         }
         
+        //Combustible
         if ((distancia * (cantidad_combustible / 100)) < distanciaVia) {
-            return false;
+            viajeComp = false;
         }
+        
+        for (int i = 0; i < lista_primates.size(); i++) {
+            lista_primates.get(i).setP_Comida(lista_primates.get(i).getP_CKiloM() * distanciaVia);
+        }
+        
+        //Formula para El combustible
+        cantidad_combustible -= cantidad_combustible / 100;
+        
 
-        return true;
+        return viajeComp;
     }
 
 }
