@@ -566,6 +566,8 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese el numero de propulsores:");
                                                             int Propulsores = sc.nextInt();
                                                             
+                                                            
+                                                            
                                                             break;
                                                         case 2: //Modificar Naves
 
