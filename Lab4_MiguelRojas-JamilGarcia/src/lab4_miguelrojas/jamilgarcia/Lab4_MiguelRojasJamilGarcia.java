@@ -1054,7 +1054,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             int distancia = sc.nextInt();
 
                                                             System.out.println("Ingrese la altitud: (double)");
-                                                            double altitud = sc.nextInt();
+                                                            double altitud = sc.nextDouble();
 
                                                             System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Super\n "
