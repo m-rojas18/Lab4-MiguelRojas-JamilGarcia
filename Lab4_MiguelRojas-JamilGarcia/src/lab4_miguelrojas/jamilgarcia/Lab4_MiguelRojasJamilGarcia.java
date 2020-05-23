@@ -26,7 +26,7 @@ public class Lab4_MiguelRojasJamilGarcia {
 
         //Prueba
         lista_usuarios.add("mrojas");
-        Ingenieros ing0 = new Ingenieros("tgrew", "hola", "hola", new Date(), "Miguel", "A", "Masculino", 1.80, 190);
+        Ingenieros ing0 = new Ingenieros("tgrew", "miguel", "hola", new Date(), "Miguel", "A", "Masculino", 1.80, 190);
         lista_ingenieros.add(ing0);
 
         char resp = 's';
@@ -2025,7 +2025,50 @@ public class Lab4_MiguelRojasJamilGarcia {
                                     case 3:
                                         //Opcion viajar
                                         System.out.print("-----------------\n"
-                                                + "Viajar");
+                                                + "Viajar\n");
+                                        System.out.println("Eliga medio de trasnporte\n"
+                                                + "[1] Helicoptero\n"
+                                                + "[2] Avion\n"
+                                                + "[3] Nave\n"
+                                                + "[4] Cohete\n"
+                                                + "Eliga una opcion:");
+                                        int opcion2 = sc.nextInt();
+                                        switch(opcion2){
+                                            case 1:
+                                                ImprimirArrayList(lista_medioHeli);
+                                                System.out.println("Eliga un helicoptero: ");
+                                                int op = sc.nextInt();
+                                                System.out.println("Ingrese al distancia a recorrer: ");
+                                                int distancia = sc.nextInt();
+                                                lista_medioHeli.get(op).Viajar(distancia);
+                                                break;
+                                            case 2:
+                                                ImprimirArrayList(lista_medioAvion);
+                                                System.out.println("Eliga un avion: ");
+                                                int op1 = sc.nextInt();
+                                                System.out.println("Ingrese al distancia a recorrer: ");
+                                                int distancia1 = sc.nextInt();
+                                                lista_medioAvion.get(op1).Viajar(distancia1);
+                                                break;
+                                            case 3:
+                                                ImprimirArrayList(lista_medioNave);
+                                                System.out.println("Eliga un nave: ");
+                                                int op2 = sc.nextInt();
+                                                System.out.println("Ingrese al distancia a recorrer: ");
+                                                int distancia2 = sc.nextInt();
+                                                lista_medioNave.get(op2).Viajar(distancia2);
+                                                break;
+                                            case 4:
+                                                ImprimirArrayList(lista_medioCohete);
+                                                System.out.println("Eliga un cohete: ");
+                                                int op3 = sc.nextInt();
+                                                System.out.println("Ingrese al distancia a recorrer: ");
+                                                int distancia3s = sc.nextInt();
+                                                lista_medioCohete.get(op3).Viajar(distancia3s);
+                                                break;
+                                            default:
+                                                System.out.println("Ingrese una opcion valida.\n");
+                                        }
                                         break;
                                     case 4:
                                         //Salir de menu

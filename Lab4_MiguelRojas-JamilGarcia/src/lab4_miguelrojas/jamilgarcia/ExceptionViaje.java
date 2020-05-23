@@ -8,8 +8,10 @@ public class ExceptionViaje extends Exception{
         super();
     }
 
-    public ExceptionViaje(boolean Viaje) {
+    public ExceptionViaje(boolean Viaje, String mensaje) {
+        super(mensaje);
         this.Viaje = Viaje;
+        
     }
 
     public boolean isViaje() {

@@ -2,12 +2,12 @@ package lab4_miguelrojas.jamilgarcia;
 
 import java.util.ArrayList;
 
-public class Medios_Transporte {
+public abstract class Medios_Transporte {
 
-    private int cantidad_combustible;
-    private int distancia;
+    int cantidad_combustible;
+    int distancia;
     private double altitud;
-    private ArrayList<Primates> lista_primates = new ArrayList();
+    ArrayList<Primates> lista_primates = new ArrayList();
 
     public Medios_Transporte() {
 
@@ -58,40 +58,6 @@ public class Medios_Transporte {
                 + "Capacidad de Altitud: " + altitud + "\n";
     }
 
-    public boolean Viajar(int distanciaVia) {
-        int comidaTot = 0, comidaKMTot = 0;
-        boolean viajeComp = true; 
-
-        //Primates
-        if (lista_primates.isEmpty()) {
-            viajeComp = false; 
-        } else {
-            
-            
-            for (int i = 0; i < lista_primates.size(); i++) {
-                comidaTot += lista_primates.get(i).getP_Comida();
-                comidaKMTot = lista_primates.get(i).getP_CKiloM();
-            }
-            
-            if ((comidaKMTot * distanciaVia) > comidaTot) {
-                viajeComp = false;
-            }
-        }
-        
-        //Combustible
-        if ((distancia * (cantidad_combustible / 100)) < distanciaVia) {
-            viajeComp = false;
-        }
-        
-        for (int i = 0; i < lista_primates.size(); i++) {
-            lista_primates.get(i).setP_Comida(lista_primates.get(i).getP_CKiloM() * distanciaVia);
-        }
-        
-        //Formula para El combustible
-        cantidad_combustible -= cantidad_combustible / 100;
-        
-
-        return viajeComp;
-    }
+    public abstract boolean Viajar(int n);
 
 }

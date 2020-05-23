@@ -1,6 +1,6 @@
 package lab4_miguelrojas.jamilgarcia;
 
-public class Aereo_Normal extends Medios_Transporte{
+public class Aereo_Normal extends Medios_Transporte {
 
     private String tipo_gasolina;
     private String pais_partida;
@@ -15,8 +15,6 @@ public class Aereo_Normal extends Medios_Transporte{
         this.pais_partida = pais_partida;
         this.pais_llegada = pais_llegada;
     }
-
-    
 
     public String getTipo_gasolina() {
         return tipo_gasolina;
@@ -44,12 +42,58 @@ public class Aereo_Normal extends Medios_Transporte{
 
     @Override
     public String toString() {
-        return super.toString() 
+        return super.toString()
                 + "Tipo De Gasolina: " + tipo_gasolina + "\n"
                 + "Pais De Partida: " + pais_partida + "\n"
                 + "Pais De Llegada: " + pais_llegada + "\n";
     }
-    
-    
-    
+
+    @Override
+    public boolean Viajar(int distanciaVia) {
+
+        int comidaTot = 0, comidaKMTot = 0;
+        boolean viajeComp = true;
+
+        //Primates
+        if (lista_primates.isEmpty()) {
+            viajeComp = false;
+        } else {
+
+            for (int i = 0; i < lista_primates.size(); i++) {
+                comidaTot += lista_primates.get(i).getP_Comida();
+                comidaKMTot = lista_primates.get(i).getP_CKiloM();
+            }
+
+            if ((comidaKMTot * distanciaVia) > comidaTot) {
+                viajeComp = false;
+            }
+        }
+
+        //Combustible
+        if ((distancia * (cantidad_combustible / 100)) < distanciaVia) {
+            viajeComp = false;
+        }
+
+        try {
+            validar(viajeComp);
+        } catch (ExceptionViaje e) {
+            e.getMessage();
+        }
+        for (int i = 0; i < lista_primates.size(); i++) {
+            lista_primates.get(i).setP_Comida(lista_primates.get(i).getP_CKiloM() * distanciaVia);
+        }
+
+        //Formula para El combustible
+        cantidad_combustible -= cantidad_combustible / 100;
+
+        return viajeComp;
+
+    }
+
+    public void validar(boolean b) throws ExceptionViaje {
+        if (b == false) {
+            throw new ExceptionViaje(b, "No se realizo el viaje");
+        }
+    }
+
 }
