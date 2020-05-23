@@ -1054,7 +1054,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             int distancia = sc.nextInt();
 
                                                             System.out.println("Ingrese la altitud: (double)");
-                                                            double altitud = sc.nextInt();
+                                                            double altitud = sc.nextDouble();
 
                                                             System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Super\n "
@@ -1134,7 +1134,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                 case 3:
 
                                                                     System.out.println("Ingrese la altitud: (double)");
-                                                                    altitud = sc.nextInt();
+                                                                    altitud = sc.nextDouble();
 
                                                                     lista_medioHeli.get(opcion_modHeli).setAltitud(altitud);
 
@@ -1244,7 +1244,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             int distancia = sc.nextInt();
 
                                                             System.out.println("Ingrese la altitud: (double)");
-                                                            double altitud = sc.nextInt();
+                                                            double altitud = sc.nextDouble();
 
                                                             System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Super\n "
@@ -1337,7 +1337,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                 case 3:
 
                                                                     System.out.println("Ingrese la altitud: (double)");
-                                                                    altitud = sc.nextInt();
+                                                                    altitud = sc.nextDouble();
 
                                                                     lista_medioAvion.get(opcion_modHeli).setAltitud(altitud);
 
@@ -1458,7 +1458,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese la distancia capaz de recorrer: ");
                                                             int distancia = sc.nextInt();
                                                             System.out.println("Ingrese la altitud: (double)");
-                                                            double altitud = sc.nextInt();
+                                                            double altitud = sc.nextDouble();
 
                                                             System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Quimico Solido\n "
@@ -1529,7 +1529,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                 case 3:
 
                                                                     System.out.println("Ingrese la altitud: (double)");
-                                                                    altitud = sc.nextInt();
+                                                                    altitud = sc.nextDouble();
 
                                                                     lista_medioNave.get(opcion_modHeli).setAltitud(altitud);
 
@@ -1624,7 +1624,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese la distancia capaz de recorrer: ");
                                                             int distancia = sc.nextInt();
                                                             System.out.println("Ingrese la altitud: (double)");
-                                                            double altitud = sc.nextInt();
+                                                            double altitud = sc.nextDouble();
 
                                                             System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Quimico Solido\n "
@@ -1696,7 +1696,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                 case 3:
 
                                                                     System.out.println("Ingrese la altitud: (double)");
-                                                                    altitud = sc.nextInt();
+                                                                    altitud = sc.nextDouble();
 
                                                                     lista_medioCohete.get(opcion_modHeli).setAltitud(altitud);
 

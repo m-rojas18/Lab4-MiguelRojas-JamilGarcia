@@ -93,6 +93,8 @@ public class Aereo_Normal extends Medios_Transporte {
     public void validar(boolean b) throws ExceptionViaje {
         if (b == false) {
             throw new ExceptionViaje(b, "No se realizo el viaje");
+        } else{
+            System.out.println("Viaje Exitoso");
         }
     }
 
