@@ -63,13 +63,16 @@ public class Medios_Transporte {
         boolean viajeComp = true; 
 
         //Primates
-        if (lista_primates.size() < 1) {
+        if (lista_primates.isEmpty()) {
             viajeComp = false; 
         } else {
+            
+            
             for (int i = 0; i < lista_primates.size(); i++) {
                 comidaTot += lista_primates.get(i).getP_Comida();
                 comidaKMTot = lista_primates.get(i).getP_CKiloM();
             }
+            
             if ((comidaKMTot * distanciaVia) > comidaTot) {
                 viajeComp = false;
             }

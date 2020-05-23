@@ -488,7 +488,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                             + "Eliga una opcion: ");
                                                                     int opcion_modP = sc.nextInt();
                                                                     sc = new Scanner(System.in);
-
+                                                                    System.out.println();
                                                                     switch (opcion_modP) {
                                                                         case 1:
                                                                             //Menu Modificar Mono
@@ -681,7 +681,7 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                         case 2:
                                                                             //Menu Modificar Gorila
                                                                             if (lista_gorilas.isEmpty()) {
-                                                                                System.out.println("No existe ningun mono.\n");
+                                                                                System.out.println("No existe ningun gorila.\n");
                                                                             } else {
                                                                                 //Elegir mono a modificar
 
@@ -898,33 +898,43 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                     switch (op_tipoPrimate) {
                                                                         case 1:
                                                                             //Eliminar Mono
-                                                                            String salida_elimMono = "";
-                                                                            salida_elimMono = imprimirMono(salida_elimMono);
+                                                                            if (lista_monos.isEmpty()) {
+                                                                                System.out.println("No existe ningun mono.\n");
+                                                                            } else {
+                                                                                String salida_elimMono = "";
+                                                                                salida_elimMono = imprimirMono(salida_elimMono);
 
-                                                                            System.out.print("------------------\n"
-                                                                                    + "Eliminar Mono\n\n"
-                                                                                    + "Lista de Monos\n"
-                                                                                    + salida_elimMono + "\n"
-                                                                                    + "Seleccione mono a eliminar: ");
-                                                                            int op_elimMono = sc.nextInt();
-                                                                            System.out.println();
-                                                                            lista_monos.remove(op_elimMono);
-                                                                            System.out.println("Se elimino exitosamente el mono.\n");
+                                                                                System.out.print("------------------\n"
+                                                                                        + "Eliminar Mono\n\n"
+                                                                                        + "Lista de Monos\n"
+                                                                                        + salida_elimMono + "\n"
+                                                                                        + "Seleccione mono a eliminar: ");
+                                                                                int op_elimMono = sc.nextInt();
+                                                                                System.out.println();
+                                                                                lista_monos.remove(op_elimMono);
+                                                                                System.out.println("Se elimino exitosamente el mono.\n");
+                                                                            }
+
                                                                             break;
                                                                         case 2:
                                                                             //Eliminar Gorila
-                                                                            String salida_ElimGor = "";
-                                                                            salida_ElimGor = imprimirGorila(salida_ElimGor);
+                                                                            if (lista_gorilas.isEmpty()) {
+                                                                                System.out.println("No existe ningun gorila.\n");
+                                                                            } else {
+                                                                                String salida_ElimGor = "";
+                                                                                salida_ElimGor = imprimirGorila(salida_ElimGor);
 
-                                                                            System.out.print("-------------------\n"
-                                                                                    + "Eliminar Gorila\n\n"
-                                                                                    + "Lista de Gorilas\n"
-                                                                                    + salida_ElimGor + "\n"
-                                                                                    + "Seleccione gorila a eliminar: ");
-                                                                            int op_elimGorila = sc.nextInt();
-                                                                            System.out.println();
-                                                                            lista_gorilas.remove(op_elimGorila);
-                                                                            System.out.println("Se elimino exitosamente el gorila.\n\n");
+                                                                                System.out.print("-------------------\n"
+                                                                                        + "Eliminar Gorila\n\n"
+                                                                                        + "Lista de Gorilas\n"
+                                                                                        + salida_ElimGor + "\n"
+                                                                                        + "Seleccione gorila a eliminar: ");
+                                                                                int op_elimGorila = sc.nextInt();
+                                                                                System.out.println();
+                                                                                lista_gorilas.remove(op_elimGorila);
+                                                                                System.out.println("Se elimino exitosamente el gorila.\n\n");
+                                                                            }
+
                                                                             break;
                                                                         case 3:
                                                                             //Salir Sub menu de eliminar
@@ -951,22 +961,31 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                     System.out.println();
                                                                     switch (op_tipoPrimate2) {
                                                                         case 1:
-                                                                            //Listar Mono
-                                                                            String salida_listarMono = "";
-                                                                            salida_listarMono = imprimirMono(salida_listarMono);
+                                                                            if (lista_monos.isEmpty()) {
+                                                                                System.out.println("No existe ningun mono.\n");
+                                                                            } else {
+                                                                                //Listar Mono
+                                                                                String salida_listarMono = "";
+                                                                                salida_listarMono = imprimirMono(salida_listarMono);
 
-                                                                            System.out.print("------------------\n"
-                                                                                    + "Lista de Monos\n"
-                                                                                    + salida_listarMono + "\n");
+                                                                                System.out.print("------------------\n"
+                                                                                        + "Lista de Monos\n"
+                                                                                        + salida_listarMono + "\n");
+                                                                            }
                                                                             break;
                                                                         case 2:
-                                                                            //Listar Gorila
-                                                                            String salida_ElimGor = "";
-                                                                            salida_ElimGor = imprimirGorila(salida_ElimGor);
+                                                                            if (lista_gorilas.isEmpty()) {
+                                                                                System.out.println("No existe ningun gorila.\n");
+                                                                            } else {
+                                                                                //Listar Gorila
+                                                                                String salida_ElimGor = "";
+                                                                                salida_ElimGor = imprimirGorila(salida_ElimGor);
 
-                                                                            System.out.print("-------------------\n"
-                                                                                    + "Lista de Gorilas\n"
-                                                                                    + salida_ElimGor + "\n");
+                                                                                System.out.print("-------------------\n"
+                                                                                        + "Lista de Gorilas\n"
+                                                                                        + salida_ElimGor + "\n");
+                                                                            }
+
                                                                         case 3:
                                                                             //Salir Sub menu de eliminar
                                                                             flag_listarPrimate = false;
@@ -1004,7 +1023,8 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                     + "[2] Menu Avion Comerciales\n"
                                                     + "[3] Menu Naves Espaciales\n"
                                                     + "[4] Menu Cohetes\n"
-                                                    + "[5] Salir\n"
+                                                    + "[5] Agregar Primates\n"
+                                                    + "[6] Salir\n"
                                                     + "Seleccione una opcion: ");
                                             int opcion_menuMT = sc.nextInt();
 
@@ -1748,8 +1768,254 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                     }
 
                                                     break;
-                                                case 5: //Menu Salir
+                                                case 5:
+                                                    //Agregar primates
+                                                    boolean crear = true;
+                                                    if (lista_monos.isEmpty()) {
+                                                        System.out.println("No existe ningun mono.\n");
+                                                        crear = false;
+                                                    }
 
+                                                    if (lista_gorilas.isEmpty()) {
+                                                        System.out.println("No existe ningun gorila.\n");
+                                                        crear = false;
+                                                    }
+
+                                                    if (crear) {
+                                                        //Existen Primates
+                                                        boolean flag_addPrimates = true;
+                                                        while (flag_addPrimates) {
+                                                            System.out.print("Agregar Primates\n"
+                                                                    + "Tipo de Medios de Transporte\n"
+                                                                    + "[1] Helicoptero\n"
+                                                                    + "[2] Avion Comercial\n"
+                                                                    + "[3] Nave Espacial\n"
+                                                                    + "[4] Cohete\n"
+                                                                    + "[5] Salir\n"
+                                                                    + "Eliga una opcion: ");
+                                                            int op_addPrimates = sc.nextInt();
+                                                            sc = new Scanner(System.in);
+                                                            System.out.println();
+                                                            switch (op_addPrimates) {
+                                                                case 1:
+                                                                    //Agregar Primates a Helicopteros
+                                                                    if (lista_medioHeli.isEmpty()) {
+                                                                        System.out.println("No existe ningun helicoptero.\n");
+                                                                    } else {
+                                                                        System.out.println("Lista de Helicopteros\n");
+                                                                        ImprimirArrayList(lista_medioHeli);
+                                                                        System.out.print("Eliga el helicoptero a agregar primates: ");
+                                                                        int op_addP = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+
+                                                                        //Mostrar Lista de Primates
+                                                                        System.out.print("Tipo de Primate\n"
+                                                                                + "[1] Mono\n"
+                                                                                + "[2] Gorila\n"
+                                                                                + "Eliga una opcion: ");
+                                                                        int op_primate = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+                                                                        if (op_primate == 1) {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirMono(salida_monos);
+
+                                                                            System.out.print("Lista de Monos\n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga mono a agregar: ");
+                                                                            int op_addMono = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+
+                                                                            lista_medioHeli.get(op_addP).getLista_primates().add(lista_monos.get(op_addMono));
+                                                                            lista_monos.remove(op_addMono);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        } else {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirGorila(salida_monos);
+
+                                                                            System.out.print("Lista de Monos\n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga gorila a agregar: ");
+                                                                            int op_addGor = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+
+                                                                            lista_medioHeli.get(op_addP).getLista_primates().add(lista_gorilas.get(op_addGor));
+                                                                            lista_gorilas.remove(op_addGor);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        }
+                                                                    }
+
+                                                                    break;
+                                                                case 2:
+                                                                    //Agregar Primates a Avion Comercial
+                                                                    if (lista_medioAvion.isEmpty()) {
+                                                                        System.out.println("No existe ningun avion.\n");
+                                                                    } else {
+                                                                        System.out.println("Lista de Aviones\n");
+                                                                        ImprimirArrayList(lista_medioAvion);
+                                                                        System.out.print("Eliga el avion a agregar primates: ");
+                                                                        int op_addP = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+
+                                                                        //Mostrar Lista de Primates
+                                                                        System.out.print("Tipo de Primate\n"
+                                                                                + "[1] Mono\n"
+                                                                                + "[2] Gorila\n"
+                                                                                + "Eliga una opcion: ");
+                                                                        int op_primate = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+                                                                        if (op_primate == 1) {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirMono(salida_monos);
+
+                                                                            System.out.print("Lista de Monos\n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga mono a agregar: ");
+                                                                            int op_addMono = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+
+                                                                            lista_medioAvion.get(op_addP).getLista_primates().add(lista_monos.get(op_addMono));
+                                                                            lista_monos.remove(op_addMono);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        } else {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirGorila(salida_monos);
+
+                                                                            System.out.print("Lista de Gorilas \n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga gorila a agregar: ");
+                                                                            int op_addGor = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+
+                                                                            lista_medioAvion.get(op_addP).getLista_primates().add(lista_gorilas.get(op_addGor));
+                                                                            lista_gorilas.remove(op_addGor);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        }
+                                                                    }
+                                                                    break;
+                                                                case 3:
+                                                                    //Agregar Primates a Nave Espacial
+                                                                    if (lista_medioNave.isEmpty()) {
+                                                                        System.out.println("No existe ninguna nave.\n");
+                                                                    } else {
+                                                                        System.out.println("Lista de Naves\n");
+                                                                        ImprimirArrayList(lista_medioNave);
+                                                                        System.out.print("Eliga el avion a agregar primates: ");
+                                                                        int op_addP = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+
+                                                                        //Mostrar Lista de Primates
+                                                                        System.out.print("Tipo de Primate\n"
+                                                                                + "[1] Mono\n"
+                                                                                + "[2] Gorila\n"
+                                                                                + "Eliga una opcion: ");
+                                                                        int op_primate = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+                                                                        if (op_primate == 1) {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirMono(salida_monos);
+
+                                                                            System.out.print("Lista de Monos\n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga mono a agregar: ");
+                                                                            int op_addMono = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+
+                                                                            lista_medioNave.get(op_addP).getLista_primates().add(lista_monos.get(op_addMono));
+                                                                            lista_monos.remove(op_addMono);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        } else {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirGorila(salida_monos);
+
+                                                                            System.out.print("Lista de Gorilas \n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga gorila a agregar: ");
+                                                                            int op_addGor = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+
+                                                                            lista_medioNave.get(op_addP).getLista_primates().add(lista_gorilas.get(op_addGor));
+                                                                            lista_gorilas.remove(op_addGor);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        }
+                                                                    }
+                                                                    break;
+                                                                case 4:
+                                                                    //Agregar Primates a Cohetes
+                                                                    if (lista_medioCohete.isEmpty()) {
+                                                                        System.out.println("No existe ningun cohetes.\n");
+                                                                    } else {
+                                                                        System.out.println("Lista de Cohetes\n");
+                                                                        ImprimirArrayList(lista_medioCohete);
+                                                                        System.out.print("Eliga el cohete a agregar primates: ");
+                                                                        int op_addP = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+                                                                        
+                                                                        //Mostrar Lista de Primates
+                                                                        System.out.print("Tipo de Primate\n"
+                                                                                + "[1] Mono\n"
+                                                                                + "[2] Gorila\n"
+                                                                                + "Eliga una opcion: ");
+                                                                        int op_primate = sc.nextInt();
+                                                                        sc = new Scanner(System.in);
+                                                                        System.out.println();
+                                                                        if (op_primate == 1) {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirMono(salida_monos);
+                                                                            
+                                                                            System.out.print("Lista de Monos\n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga mono a agregar: ");
+                                                                            int op_addMono = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+                                                                            
+                                                                            lista_medioCohete.get(op_addP).getLista_primates().add(lista_monos.get(op_addMono));
+                                                                            lista_monos.remove(op_addMono);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        } else {
+                                                                            String salida_monos = "";
+                                                                            salida_monos = imprimirGorila(salida_monos);
+                                                                            
+                                                                            System.out.print("Lista de Gorilas \n"
+                                                                                    + salida_monos + "\n"
+                                                                                    + "Eliga gorila a agregar: ");
+                                                                            int op_addGor = sc.nextInt();
+                                                                            sc = new Scanner(System.in);
+                                                                            System.out.println();
+                                                                            
+                                                                            lista_medioCohete.get(op_addP).getLista_primates().add(lista_gorilas.get(op_addGor));
+                                                                            lista_gorilas.remove(op_addGor);
+                                                                            System.out.println("Se agrego exitosamente el primate!!\n");
+                                                                        }
+                                                                    }
+                                                                    break;
+                                                                case 5:
+                                                                    flag_addPrimates = false;
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese una opcion valida.\n");
+                                                            }
+                                                        }
+
+                                                    }
+
+                                                    break;
+                                                case 6:
+                                                    flag_menuMT = 'o';
+                                                    //Salir
                                                     break;
                                                 default:
                                                     System.out.println("Ingrese un numero valido!!!");
