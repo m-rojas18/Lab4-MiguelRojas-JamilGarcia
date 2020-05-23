@@ -33,7 +33,10 @@ public class Helicoptero extends Aereo_Normal{
 
     @Override
     public String toString() {
-        return "Helicoptero{" + "numero_helices=" + numero_helices + ", numero_patas=" + numero_patas + '}';
+        return super.toString()
+                + "Tipo De Medio De Transporte: Helicoptero" + "\n"
+                + "Numero De Helices: " + numero_helices + "\n"
+                + "Numero De Patas" + numero_patas + "\n";
     }
     
     

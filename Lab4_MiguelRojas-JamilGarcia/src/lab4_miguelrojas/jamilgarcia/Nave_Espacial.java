@@ -23,7 +23,9 @@ public class Nave_Espacial extends Espacial{
 
     @Override
     public String toString() {
-        return "Nave_Espacial{" + "numero_propulsores=" + numero_propulsores + '}';
+        return super.toString() +
+                "Tipo de Medio De Transporte: Nave Espacial" + "\n"
+                + "Numero De Propulsores: " + numero_propulsores + "\n";
     }
     
     

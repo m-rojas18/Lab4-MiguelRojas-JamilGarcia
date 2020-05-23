@@ -44,7 +44,10 @@ public class Aereo_Normal extends Medios_Transporte{
 
     @Override
     public String toString() {
-        return "Aereo_Normal{" + "tipo_gasolina=" + tipo_gasolina + ", pais_partida=" + pais_partida + ", pais_llegada=" + pais_llegada + '}';
+        return super.toString() 
+                + "Tipo De Gasolina: " + tipo_gasolina + "\n"
+                + "Pais De Partida: " + pais_partida + "\n"
+                + "Pais De Llegada: " + pais_llegada + "\n";
     }
     
     

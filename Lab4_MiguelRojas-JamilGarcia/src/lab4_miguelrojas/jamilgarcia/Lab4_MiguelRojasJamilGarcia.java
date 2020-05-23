@@ -11,6 +11,10 @@ public class Lab4_MiguelRojasJamilGarcia {
     static ArrayList<String> lista_usuarios = new ArrayList();
     static ArrayList<Ingenieros> lista_ingenieros = new ArrayList();
     static ArrayList<Medios_Transporte> lista_medioTrans = new ArrayList();
+    static ArrayList<Helicoptero> lista_medioHeli = new ArrayList();
+    static ArrayList<Avion_Comercial> lista_medioAvion = new ArrayList();
+    static ArrayList<Nave_Espacial> lista_medioNave = new ArrayList();
+    static ArrayList<Cohete> lista_medioCohete = new ArrayList();
     static int posicion_ing = 0;
     static ArrayList<Mono> lista_monos = new ArrayList();
     static ArrayList<Gorila> lista_gorilas = new ArrayList();
@@ -441,9 +445,9 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                     sc = new Scanner(System.in);
                                                                     System.out.println();
                                                                     //Crear Objeto Mono
-                                                                    Mono mono = new Mono(color_mono, cantidad_comida, 
+                                                                    Mono mono = new Mono(color_mono, cantidad_comida,
                                                                             comida_km, planeta_primate, lugar_primate,
-                                                                            nombre_primate, grupo_sanguineoP, sexo_primate, 
+                                                                            nombre_primate, grupo_sanguineoP, sexo_primate,
                                                                             altura_primate, peso_primate);
                                                                     lista_monos.add(mono);
                                                                     System.out.println("Se creo exitosamente el primate!!\n");
@@ -462,9 +466,9 @@ public class Lab4_MiguelRojasJamilGarcia {
 
                                                                     }
                                                                     //Crear Objeto  Gorila   
-                                                                    Gorila g = new Gorila(iq_gorila, cantidad_comida, comida_km, 
-                                                                            planeta_primate, lugar_primate, nombre_primate , 
-                                                                            grupo_sanguineoP, sexo_primate, 
+                                                                    Gorila g = new Gorila(iq_gorila, cantidad_comida, comida_km,
+                                                                            planeta_primate, lugar_primate, nombre_primate,
+                                                                            grupo_sanguineoP, sexo_primate,
                                                                             altura_primate, peso_primate);
                                                                     lista_gorilas.add(g);
                                                                     System.out.println("Se creo exitosamente el primate!!\n");
@@ -572,16 +576,129 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese el numero de patas del Helicoptero: ");
                                                             int n_patas = sc.nextInt();
 
-                                                            lista_medioTrans.add(new Helicoptero(n_helices, n_patas, combustible, PaisP, PaisL, cantidad_combustible, distancia, altitud));
+                                                            lista_medioHeli.add(new Helicoptero(n_helices, n_patas, combustible, PaisP, PaisL, cantidad_combustible, distancia, altitud));
 
                                                             break;
                                                         case 2: //Modificar Heli
 
+                                                            ImprimirArrayList(lista_medioHeli);
+                                                            System.out.println("Ingrese el numero de Helicoptero a Modificar: ");
+                                                            int opcionHeliM = sc.nextInt();
+
+                                                            System.out.print("------------------\n"
+                                                                    + "----- Menu Modificar Heli-----\n"
+                                                                    + "[1] Cantidad De Combustible\n"
+                                                                    + "[2] Distancia Que Recorre\n"
+                                                                    + "[3] Altitud\n"
+                                                                    + "[4] Combustible\n"
+                                                                    + "[5] Pais De Partida\n"
+                                                                    + "[6] Pais De LLegada\n"
+                                                                    + "[7] Numero de Helices\n"
+                                                                    + "[8] Numero de Patas\n"
+                                                                    + "Seleccione una opcion: ");
+                                                            int opcion_modHeli = sc.nextInt();
+
+                                                            switch (opcion_modHeli) {
+                                                                case 1:
+                                                                    System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                                    cantidad_combustible = sc.nextInt();
+
+                                                                    while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                        System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                        cantidad_combustible = sc.nextInt();
+                                                                    }
+
+                                                                    lista_medioHeli.get(opcion_modHeli).setCantidad_combustible(cantidad_combustible);
+                                                                    break;
+                                                                case 2:
+
+                                                                    System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                                    distancia = sc.nextInt();
+
+                                                                    lista_medioHeli.get(opcion_modHeli).setDistancia(distancia);
+
+                                                                    break;
+                                                                case 3:
+
+                                                                    System.out.println("Ingrese la altitud: (double)");
+                                                                    altitud = sc.nextInt();
+
+                                                                    lista_medioHeli.get(opcion_modHeli).setAltitud(altitud);
+
+                                                                    break;
+                                                                case 4:
+                                                                    System.out.println("Ingrese el tipo de combustible: \n"
+                                                                            + "[1] Super\n "
+                                                                            + "[2] Regular\n "
+                                                                            + "[3] Diesel\n ");
+                                                                    opcion_menuComb = sc.nextInt();
+
+                                                                    combustible = "";
+                                                                    switch (opcion_menuComb) {
+                                                                        case 1:
+                                                                            combustible = "Super";
+                                                                            break;
+                                                                        case 2:
+                                                                            combustible = "Regular";
+                                                                            break;
+                                                                        case 3:
+                                                                            combustible = "Diesel";
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese un valor valido!!");
+                                                                    }
+
+                                                                    lista_medioHeli.get(opcion_modHeli).setTipo_gasolina(combustible);
+
+                                                                    break;
+                                                                case 5:
+
+                                                                    System.out.println("Escriba el pais de partida: ");
+                                                                    PaisP = sc.next();
+
+                                                                    lista_medioHeli.get(opcion_modHeli).setPais_partida(PaisP);
+
+                                                                    break;
+                                                                case 6:
+
+                                                                    System.out.println("Escriba el pais de llegada: ");
+                                                                    PaisL = sc.next();
+
+                                                                    lista_medioHeli.get(opcion_modHeli).setPais_llegada(PaisL);
+
+                                                                    break;
+                                                                case 7:
+
+                                                                    System.out.println("Ingrese el numero de helices del Helicoptero: ");
+                                                                    n_helices = sc.nextInt();
+                                                                    lista_medioHeli.get(opcion_modHeli).setNumero_helices(n_helices);
+
+                                                                    break;
+                                                                case 8:
+
+                                                                    System.out.println("Ingrese el numero de patas del Helicoptero: ");
+                                                                    n_patas = sc.nextInt();
+                                                                    lista_medioHeli.get(opcion_modHeli).setNumero_patas(n_patas);
+
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese una opcion valida");
+                                                            }
                                                             break;
                                                         case 3: //Eliminar Heli
 
+                                                            ImprimirArrayList(lista_medioHeli);
+                                                            System.out.println("Elija el Helicoptero a eliminar: ");
+                                                            int opcion_elim = sc.nextInt();
+
+                                                            lista_medioHeli.remove(opcion_elim);
+
+                                                            System.out.println("Eliminado con exito");
+
                                                             break;
                                                         case 4: //Listar Heli
+                                                            
+                                                            ImprimirArrayList(lista_medioHeli);
 
                                                             break;
                                                         default:
@@ -662,16 +779,139 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                     System.out.println("Ingrese opcion validad");
                                                             }
 
-                                                            lista_medioTrans.add(new Avion_Comercial(n_pasajeros, Pilot, combustible, PaisP, PaisL, cantidad_combustible, distancia, altitud));
+                                                            lista_medioAvion.add(new Avion_Comercial(n_pasajeros, Pilot, combustible, PaisP, PaisL, cantidad_combustible, distancia, altitud));
 
                                                             break;
                                                         case 2: //Modificar Avion
 
+                                                            ImprimirArrayList(lista_medioAvion);
+                                                            System.out.println("Ingrese el numero de Avion a Modificar: ");
+                                                            int opcionHeliM = sc.nextInt();
+
+                                                            System.out.print("------------------\n"
+                                                                    + "----- Menu Modificar Heli-----\n"
+                                                                    + "[1] Cantidad De Combustible\n"
+                                                                    + "[2] Distancia Que Recorre\n"
+                                                                    + "[3] Altitud\n"
+                                                                    + "[4] Combustible\n"
+                                                                    + "[5] Pais De Partida\n"
+                                                                    + "[6] Pais De LLegada\n"
+                                                                    + "[7] Numero de Pasajeros\n"
+                                                                    + "[8] Piloto Automatico\n"
+                                                                    + "Seleccione una opcion: ");
+                                                            int opcion_modHeli = sc.nextInt();
+
+                                                            switch (opcion_modHeli) {
+                                                                case 1:
+                                                                    System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                                    cantidad_combustible = sc.nextInt();
+
+                                                                    while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                        System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                        cantidad_combustible = sc.nextInt();
+                                                                    }
+
+                                                                    lista_medioAvion.get(opcion_modHeli).setCantidad_combustible(cantidad_combustible);
+                                                                    break;
+                                                                case 2:
+
+                                                                    System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                                    distancia = sc.nextInt();
+
+                                                                    lista_medioAvion.get(opcion_modHeli).setDistancia(distancia);
+
+                                                                    break;
+                                                                case 3:
+
+                                                                    System.out.println("Ingrese la altitud: (double)");
+                                                                    altitud = sc.nextInt();
+
+                                                                    lista_medioAvion.get(opcion_modHeli).setAltitud(altitud);
+
+                                                                    break;
+                                                                case 4:
+                                                                    System.out.println("Ingrese el tipo de combustible: \n"
+                                                                            + "[1] Super\n "
+                                                                            + "[2] Regular\n "
+                                                                            + "[3] Diesel\n ");
+                                                                    opcion_menuComb = sc.nextInt();
+
+                                                                    combustible = "";
+                                                                    switch (opcion_menuComb) {
+                                                                        case 1:
+                                                                            combustible = "Super";
+                                                                            break;
+                                                                        case 2:
+                                                                            combustible = "Regular";
+                                                                            break;
+                                                                        case 3:
+                                                                            combustible = "Diesel";
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese un valor valido!!");
+                                                                    }
+
+                                                                    lista_medioAvion.get(opcion_modHeli).setTipo_gasolina(combustible);
+
+                                                                    break;
+                                                                case 5:
+
+                                                                    System.out.println("Escriba el pais de partida: ");
+                                                                    PaisP = sc.next();
+
+                                                                    lista_medioAvion.get(opcion_modHeli).setPais_partida(PaisP);
+
+                                                                    break;
+                                                                case 6:
+
+                                                                    System.out.println("Escriba el pais de llegada: ");
+                                                                    PaisL = sc.next();
+
+                                                                    lista_medioAvion.get(opcion_modHeli).setPais_llegada(PaisL);
+
+                                                                    break;
+                                                                case 7:
+
+                                                                    System.out.println("Ingrese el numero de pasajeros: ");
+                                                                    n_pasajeros = sc.nextInt();
+                                                                    lista_medioAvion.get(opcion_modHeli).setNumero_pasajeros(n_pasajeros);
+
+                                                                    break;
+                                                                case 8:
+
+                                                                    System.out.println("Funciona el piloto automatico?\n"
+                                                                            + "[1] Si \n"
+                                                                            + "[2] No\n");
+                                                                    opcion_Pilot = sc.nextInt();
+                                                                    Pilot = "";
+                                                                    switch (opcion_Pilot) {
+                                                                        case 1:
+                                                                            Pilot = "Si";
+                                                                            break;
+                                                                        case 2:
+                                                                            Pilot = "No";
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese opcion validad");
+                                                                    }
+                                                                    lista_medioAvion.get(opcion_modHeli).setFuncionamiento(Pilot);
+
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese una opcion valida");
+                                                            }
                                                             break;
                                                         case 3: //Eliminar Avion
 
+                                                            ImprimirArrayList(lista_medioAvion);
+                                                            System.out.println("Elija el Avion a eliminar: ");
+                                                            int opcion_elim = sc.nextInt();
+
+                                                            lista_medioAvion.remove(opcion_elim);
+
                                                             break;
                                                         case 4: //Listar Avion
+                                                            ImprimirArrayList(lista_medioAvion);
 
                                                             break;
                                                         default:
@@ -706,13 +946,13 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             int distancia = sc.nextInt();
                                                             System.out.println("Ingrese la altitud: (double)");
                                                             double altitud = sc.nextInt();
-                                                            
-                                                             System.out.println("Ingrese el tipo de combustible: \n"
+
+                                                            System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Quimico Solido\n "
                                                                     + "[2] Propelente Liquido\n");
-                                                            int opcion_menuComb = sc.nextInt(); 
-                                                             
-                                                            String combustible= "";
+                                                            int opcion_menuComb = sc.nextInt();
+
+                                                            String combustible = "";
                                                             switch (opcion_menuComb) {
                                                                 case 1:
                                                                     combustible = "Quimico Solido";
@@ -732,16 +972,114 @@ public class Lab4_MiguelRojasJamilGarcia {
 
                                                             System.out.println("Ingrese el numero de propulsores:");
                                                             int Propulsores = sc.nextInt();
-                                                            
-                                                            lista_medioTrans.add(new Nave_Espacial(Propulsores, combustible, PlanetaP, PlanetaL, cantidad_combustible, distancia, altitud));
+
+                                                            lista_medioNave.add(new Nave_Espacial(Propulsores, combustible, PlanetaP, PlanetaL, cantidad_combustible, distancia, altitud));
                                                             break;
                                                         case 2: //Modificar Naves
 
+                                                            ImprimirArrayList(lista_medioNave);
+                                                            System.out.println("Ingrese el numero de Avion a Modificar: ");
+                                                            int opcionHeliM = sc.nextInt();
+
+                                                            System.out.print("------------------\n"
+                                                                    + "----- Menu Modificar Heli-----\n"
+                                                                    + "[1] Cantidad De Combustible\n"
+                                                                    + "[2] Distancia Que Recorre\n"
+                                                                    + "[3] Altitud\n"
+                                                                    + "[4] Combustible\n"
+                                                                    + "[5] Planeta De Partida\n"
+                                                                    + "[6] PlanetaDe LLegada\n"
+                                                                    + "[7] Numero de Propulsores\n"
+                                                                    + "Seleccione una opcion: ");
+                                                            int opcion_modHeli = sc.nextInt();
+
+                                                            switch (opcion_modHeli) {
+                                                                case 1:
+                                                                    System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                                    cantidad_combustible = sc.nextInt();
+
+                                                                    while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                        System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                        cantidad_combustible = sc.nextInt();
+                                                                    }
+
+                                                                    lista_medioNave.get(opcion_modHeli).setCantidad_combustible(cantidad_combustible);
+                                                                    break;
+                                                                case 2:
+
+                                                                    System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                                    distancia = sc.nextInt();
+
+                                                                    lista_medioNave.get(opcion_modHeli).setDistancia(distancia);
+
+                                                                    break;
+                                                                case 3:
+
+                                                                    System.out.println("Ingrese la altitud: (double)");
+                                                                    altitud = sc.nextInt();
+
+                                                                    lista_medioNave.get(opcion_modHeli).setAltitud(altitud);
+
+                                                                    break;
+                                                                case 4:
+                                                                    System.out.println("Ingrese el tipo de combustible: \n"
+                                                                            + "[1] Quimico Solido\n "
+                                                                            + "[2] Propelente Liquido\n");
+                                                                    opcion_menuComb = sc.nextInt();
+
+                                                                    combustible = "";
+                                                                    switch (opcion_menuComb) {
+                                                                        case 1:
+                                                                            combustible = "Quimico Solido";
+                                                                            break;
+                                                                        case 2:
+                                                                            combustible = "Propelente Liquido";
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese un valor valido!!");
+                                                                    }
+
+                                                                    lista_medioNave.get(opcion_modHeli).setTipo_combustible(combustible);
+
+                                                                    break;
+                                                                case 5:
+
+                                                                    System.out.println("Escriba el Planeta de partida: ");
+                                                                    PlanetaP = sc.next();
+
+                                                                    lista_medioNave.get(opcion_modHeli).setPlaneta_partida(PlanetaP);
+
+                                                                    break;
+                                                                case 6:
+
+                                                                    System.out.println("Escriba el Planeta de llegada: ");
+                                                                    PlanetaL = sc.next();
+
+                                                                    lista_medioNave.get(opcion_modHeli).setPlaneta_llegada(PlanetaL);
+
+                                                                    break;
+                                                                case 7:
+
+                                                                    System.out.println("Ingrese el numero de propulsores:");
+                                                                    Propulsores = sc.nextInt();
+                                                                    lista_medioNave.get(opcion_modHeli).setNumero_propulsores(Propulsores);
+
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese una opcion valida");
+                                                            }
                                                             break;
                                                         case 3: //Eliminar Naves
 
+                                                            ImprimirArrayList(lista_medioNave);
+                                                            System.out.println("Elija la Nave a eliminar: ");
+                                                            int opcion_elim = sc.nextInt();
+
+                                                            lista_medioNave.remove(opcion_elim);
+
                                                             break;
                                                         case 4: //Listar Naves
+                                                            ImprimirArrayList(lista_medioNave);
 
                                                             break;
                                                         default:
@@ -774,14 +1112,14 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             int distancia = sc.nextInt();
                                                             System.out.println("Ingrese la altitud: (double)");
                                                             double altitud = sc.nextInt();
-                                                            
-                                                             System.out.println("Ingrese el tipo de combustible: \n"
+
+                                                            System.out.println("Ingrese el tipo de combustible: \n"
                                                                     + "[1] Quimico Solido\n "
                                                                     + "[2] Propelente Liquido\n");
-                                                            int opcion_menuComb = sc.nextInt(); 
-                                                             
-                                                            String combustible ="";
-                                                            
+                                                            int opcion_menuComb = sc.nextInt();
+
+                                                            String combustible = "";
+
                                                             switch (opcion_menuComb) {
                                                                 case 1:
                                                                     combustible = "Quimico Solido";
@@ -802,16 +1140,114 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                             System.out.println("Ingrese el numero de separaciones: ");
                                                             int separaciones = sc.nextInt();
 
-                                                            lista_medioTrans.add(new Cohete(separaciones, combustible, PlanetaP, PlanetaL, cantidad_combustible, distancia, altitud));
+                                                            lista_medioCohete.add(new Cohete(separaciones, combustible, PlanetaP, PlanetaL, cantidad_combustible, distancia, altitud));
                                                             break;
                                                         case 2: //Modificar Cohete
 
-                                                            
+                                                            ImprimirArrayList(lista_medioCohete);
+                                                            System.out.println("Ingrese el numero de Avion a Modificar: ");
+                                                            int opcionHeliM = sc.nextInt();
+
+                                                            System.out.print("------------------\n"
+                                                                    + "----- Menu Modificar Heli-----\n"
+                                                                    + "[1] Cantidad De Combustible\n"
+                                                                    + "[2] Distancia Que Recorre\n"
+                                                                    + "[3] Altitud\n"
+                                                                    + "[4] Combustible\n"
+                                                                    + "[5] Planeta De Partida\n"
+                                                                    + "[6] PlanetaDe LLegada\n"
+                                                                    + "[7] Numero de Separaciones\n"
+                                                                    + "Seleccione una opcion: ");
+                                                            int opcion_modHeli = sc.nextInt();
+
+                                                            switch (opcion_modHeli) {
+                                                                case 1:
+                                                                    System.out.println("Ingrese la cantidad de combustible en el tanque (1- 100): ");
+                                                                    cantidad_combustible = sc.nextInt();
+
+                                                                    while (cantidad_combustible < 1 || cantidad_combustible > 100) {
+                                                                        System.out.println("Error! Vuelva a ingresarlo: ");
+                                                                        cantidad_combustible = sc.nextInt();
+                                                                    }
+
+                                                                    lista_medioCohete.get(opcion_modHeli).setCantidad_combustible(cantidad_combustible);
+                                                                    break;
+                                                                case 2:
+
+                                                                    System.out.println("Ingrese la distancia capaz de recorrer: ");
+                                                                    distancia = sc.nextInt();
+
+                                                                    lista_medioCohete.get(opcion_modHeli).setDistancia(distancia);
+
+                                                                    break;
+                                                                case 3:
+
+                                                                    System.out.println("Ingrese la altitud: (double)");
+                                                                    altitud = sc.nextInt();
+
+                                                                    lista_medioCohete.get(opcion_modHeli).setAltitud(altitud);
+
+                                                                    break;
+                                                                case 4:
+                                                                    System.out.println("Ingrese el tipo de combustible: \n"
+                                                                            + "[1] Quimico Solido\n "
+                                                                            + "[2] Propelente Liquido\n");
+                                                                    opcion_menuComb = sc.nextInt();
+
+                                                                    combustible = "";
+                                                                    switch (opcion_menuComb) {
+                                                                        case 1:
+                                                                            combustible = "Quimico Solido";
+                                                                            break;
+                                                                        case 2:
+                                                                            combustible = "Propelente Liquido";
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese un valor valido!!");
+                                                                    }
+
+                                                                    lista_medioCohete.get(opcion_modHeli).setTipo_combustible(combustible);
+
+                                                                    break;
+                                                                case 5:
+
+                                                                    System.out.println("Escriba el Planeta de partida: ");
+                                                                    PlanetaP = sc.next();
+
+                                                                    lista_medioCohete.get(opcion_modHeli).setPlaneta_partida(PlanetaP);
+
+                                                                    break;
+                                                                case 6:
+
+                                                                    System.out.println("Escriba el Planeta de llegada: ");
+                                                                    PlanetaL = sc.next();
+
+                                                                    lista_medioCohete.get(opcion_modHeli).setPlaneta_llegada(PlanetaL);
+
+                                                                    break;
+                                                                case 7:
+
+                                                                    System.out.println("Ingrese el numero de separaciones: ");
+                                                                    separaciones = sc.nextInt();
+                                                                    lista_medioCohete.get(opcion_modHeli).setNumero_separaciones(separaciones);
+
+                                                                    break;
+                                                                default:
+                                                                    System.out.println("Ingrese una opcion valida");
+                                                            }
+
                                                             break;
                                                         case 3: //Eliminar Cohete
 
+                                                            ImprimirArrayList(lista_medioCohete);
+                                                            System.out.println("Elija el Cohete a eliminar: ");
+                                                            int opcion_elim = sc.nextInt();
+
+                                                            lista_medioCohete.remove(opcion_elim);
+
                                                             break;
                                                         case 4: //Listar Cohete
+                                                            ImprimirArrayList(lista_medioCohete);
 
                                                             break;
                                                         default:

@@ -53,7 +53,9 @@ public class Medios_Transporte {
 
     @Override
     public String toString() {
-        return "Medios_Transporte{" + "cantidad_combustible=" + cantidad_combustible + ", distancia=" + distancia + ", altitud=" + altitud + '}';
+        return "Cantidad De Combustible Disponible: " + cantidad_combustible + "\n"
+                + "Distancia Que Recorre Lleno: " + distancia + "\n"
+                + "Capacidad de Altitud: " + altitud + "\n";
     }
 
     public boolean Viajar(int distanciaVia) {

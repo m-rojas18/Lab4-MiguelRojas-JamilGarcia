@@ -33,7 +33,10 @@ public class Avion_Comercial extends Aereo_Normal{
 
     @Override
     public String toString() {
-        return "Avion_Comercial{" + "numero_pasajeros=" + numero_pasajeros + ", funcionamiento=" + funcionamiento + '}';
+        return super.toString() 
+                + "Tipo De Medio De Transporte: Avion Comercial" + "\n"
+                + "Numero De Pasajeros: " + numero_pasajeros + "\n" 
+                + "Piloto Automatico: " + funcionamiento + "\n";
     }
     
     
