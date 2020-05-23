@@ -9,15 +9,16 @@ import java.util.Scanner;
 public class Lab4_MiguelRojasJamilGarcia {
 
     static ArrayList<String> lista_usuarios = new ArrayList();
+    static int posicion_ing = 0;
+    //Listas de Seres Vivos
     static ArrayList<Ingenieros> lista_ingenieros = new ArrayList();
-    static ArrayList<Medios_Transporte> lista_medioTrans = new ArrayList();
+    static ArrayList<Mono> lista_monos = new ArrayList();
+    static ArrayList<Gorila> lista_gorilas = new ArrayList();
+    //Lista de Medios de Transporte
     static ArrayList<Helicoptero> lista_medioHeli = new ArrayList();
     static ArrayList<Avion_Comercial> lista_medioAvion = new ArrayList();
     static ArrayList<Nave_Espacial> lista_medioNave = new ArrayList();
     static ArrayList<Cohete> lista_medioCohete = new ArrayList();
-    static int posicion_ing = 0;
-    static ArrayList<Mono> lista_monos = new ArrayList();
-    static ArrayList<Gorila> lista_gorilas = new ArrayList();
 
     public static void main(String[] args) throws ParseException {
 
@@ -476,12 +477,504 @@ public class Lab4_MiguelRojasJamilGarcia {
                                                                 break;
                                                             case 2:
                                                                 //Modificar Primate
+                                                                //Modificar Primate
+                                                                boolean flag_modP = true;
+                                                                while (flag_modP) {
+                                                                    System.out.print("------------------\n"
+                                                                            + "Modificar Primates\n"
+                                                                            + "[1] Modificar Mono\n"
+                                                                            + "[2] Modificar Gorilas\n"
+                                                                            + "[3] Salir\n"
+                                                                            + "Eliga una opcion: ");
+                                                                    int opcion_modP = sc.nextInt();
+                                                                    sc = new Scanner(System.in);
+
+                                                                    switch (opcion_modP) {
+                                                                        case 1:
+                                                                            //Menu Modificar Mono
+
+                                                                            if (lista_monos.isEmpty()) {
+                                                                                System.out.println("No existe ningun mono.\n");
+                                                                            } else {
+                                                                                //Elegir mono a modificar
+
+                                                                                String salida_modM = "";
+                                                                                salida_modM = imprimirMono(salida_modM);
+
+                                                                                System.out.println("-----------------\n"
+                                                                                        + "Lista de Monos\n"
+                                                                                        + salida_modM + "\n"
+                                                                                        + "Eliga mono a modificar: ");
+                                                                                int op_modMono = sc.nextInt();
+                                                                                sc = new Scanner(System.in);
+                                                                                System.out.println();
+
+                                                                                //Crear Objeto
+                                                                                Mono mod_m = lista_monos.get(op_modMono);
+                                                                                boolean flag_seguirMod = true;
+                                                                                while (flag_seguirMod) {
+
+                                                                                    System.out.println("Mono modificando\n"
+                                                                                            + "Nombre: " + mod_m.getS_Nombre() + "\n"
+                                                                                            + "Grupo Sanguineo: " + mod_m.getS_GSang() + "\n"
+                                                                                            + "Sexo: " + mod_m.getS_Sexo() + "\n"
+                                                                                            + "Altura: " + mod_m.getS_Altura() + "\n"
+                                                                                            + "Peso: " + mod_m.getS_Peso() + "lbs. \n"
+                                                                                            + "Cantidad de Comida: " + mod_m.getP_Comida() + "\n"
+                                                                                            + "Comida por KM: " + mod_m.getP_CKiloM() + "\n"
+                                                                                            + "Planeta Asignado: " + mod_m.getP_Planeta() + "\n"
+                                                                                            + "Color de Pelo: " + mod_m.getM_ColorP() + "\n"
+                                                                                            + "------------------\n");
+
+                                                                                    System.out.print("-----------------\n"
+                                                                                            + "Modificar Mono\n"
+                                                                                            + "[1] Modificar Nombre\n"
+                                                                                            + "[2] Modificar Grupo Sanguineo\n"
+                                                                                            + "[3] Modificar Sexo\n"
+                                                                                            + "[4] Modificar Altura\n"
+                                                                                            + "[5] Modificar Peso\n"
+                                                                                            + "[6] Modificar Comida por KM\n"
+                                                                                            + "[7] Modificar Planeta Asignado\n"
+                                                                                            + "[8] Modificar Lugar de Nacimiento\n"
+                                                                                            + "[9] Modificar Color de pelo\n"
+                                                                                            + "[10] Salir\n"
+                                                                                            + "Eliga una opcion: ");
+                                                                                    int op_menuMod = sc.nextInt();
+                                                                                    sc = new Scanner(System.in);
+                                                                                    System.out.println();
+                                                                                    switch (op_menuMod) {
+                                                                                        case 1:
+                                                                                            //Modificar Nombre
+                                                                                            System.out.print("----------------\n"
+                                                                                                    + "Modificar Nombre\n\n"
+                                                                                                    + "Ingrese nuevo nombre para el mono: ");
+                                                                                            String nombre_ModM = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setS_Nombre(nombre_ModM);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 2:
+                                                                                            //Modificar Grupo Sanguineo
+                                                                                            //Grupo Sanguineo
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Grupos Sanguineos\n\n"
+                                                                                                    + "Grupos Sanguineos\n"
+                                                                                                    + "[1] A\n"
+                                                                                                    + "[2] B\n"
+                                                                                                    + "[3] AB\n"
+                                                                                                    + "[4] O\n"
+                                                                                                    + "Seleccione nuevo grupo sanguineo: ");
+                                                                                            int op_modGrupoS = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            if (op_modGrupoS == 1) {
+                                                                                                mod_m.setS_GSang("A");
+                                                                                            }
+                                                                                            if (op_modGrupoS == 2) {
+                                                                                                mod_m.setS_GSang("B");
+                                                                                            }
+                                                                                            if (op_modGrupoS == 3) {
+                                                                                                mod_m.setS_GSang("AB");
+                                                                                            }
+                                                                                            if (op_modGrupoS == 4) {
+                                                                                                mod_m.setS_GSang("O");
+                                                                                            }
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 3:
+                                                                                            //Modificar Sexo
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Sexo\n\n"
+                                                                                                    + "Tipos de Sexo\n"
+                                                                                                    + "[1] Masculino\n"
+                                                                                                    + "[2] Femenino\n"
+                                                                                                    + "Eliga una opcion: ");
+                                                                                            int op_modSexoM = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            if (op_modSexoM == 1) {
+                                                                                                mod_m.setS_Sexo("Masculino");
+                                                                                            } else {
+                                                                                                mod_m.setS_Sexo("Femenino");
+                                                                                            }
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 4:
+                                                                                            //Modificar Altura
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Altura\n\n"
+                                                                                                    + "Ingrese nueva altura: ");
+                                                                                            double altura_ModM = sc.nextDouble();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setS_Altura(altura_ModM);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 5:
+                                                                                            //Modificar Peso
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Peso\n\n"
+                                                                                                    + "Ingrese nuevo peso: ");
+
+                                                                                            int peso_modM = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setS_Peso(peso_modM);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 6:
+                                                                                            //Modificar Comida por KM
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Comida por Km\n\n"
+                                                                                                    + "Ingrese nuevo cantidad de comida consumida por KM: ");
+                                                                                            int comida_kmMod = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setP_CKiloM(comida_kmMod);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 7:
+                                                                                            //Modificar Planeta
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Planeta Asignado\n\n"
+                                                                                                    + "Ingrese nuevo planeta: ");
+                                                                                            String planeta_ModM = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setP_Planeta(planeta_ModM);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 8:
+                                                                                            //Modificar Lugar de Nacimiento
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Lugar de Nacimiento\n\n"
+                                                                                                    + "Ingrese nuevo lugar de nacimiento: ");
+                                                                                            String lugar_ModM = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setP_Nacimiento(lugar_ModM);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 9:
+                                                                                            //Modificar Color de Pelo
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Color de Pelo\n\n"
+                                                                                                    + "Ingrese nuevo color: ");
+                                                                                            String color_ModM = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_m.setM_ColorP(color_ModM);
+                                                                                            System.out.println("Se modifico exitosamente el mono!!\n");
+                                                                                            break;
+                                                                                        case 10:
+                                                                                            //Salir Modificar Monos
+                                                                                            flag_seguirMod = false;
+                                                                                            break;
+                                                                                        default:
+                                                                                            System.out.println("Ingrese una opcion valida.\n");
+                                                                                    }
+                                                                                }
+                                                                            }
+
+                                                                            break;
+                                                                        case 2:
+                                                                            //Menu Modificar Gorila
+                                                                            if (lista_gorilas.isEmpty()) {
+                                                                                System.out.println("No existe ningun mono.\n");
+                                                                            } else {
+                                                                                //Elegir mono a modificar
+
+                                                                                String salida_modG = "";
+                                                                                salida_modG = imprimirGorila(salida_modG);
+
+                                                                                System.out.println("-----------------\n"
+                                                                                        + "Lista de Monos\n"
+                                                                                        + salida_modG + "\n"
+                                                                                        + "Eliga mono a modificar: ");
+                                                                                int op_modGorila = sc.nextInt();
+                                                                                sc = new Scanner(System.in);
+                                                                                System.out.println();
+
+                                                                                //Crear Objeto
+                                                                                Gorila mod_G = lista_gorilas.get(op_modGorila);
+                                                                                boolean flag_seguirMod2 = true;
+                                                                                while (flag_seguirMod2) {
+
+                                                                                    System.out.println("Gorila modificando\n"
+                                                                                            + "Nombre: " + mod_G.getS_Nombre() + "\n"
+                                                                                            + "Grupo Sanguineo: " + mod_G.getS_GSang() + "\n"
+                                                                                            + "Sexo: " + mod_G.getS_Sexo() + "\n"
+                                                                                            + "Altura: " + mod_G.getS_Altura() + "\n"
+                                                                                            + "Peso: " + mod_G.getS_Peso() + "lbs. \n"
+                                                                                            + "Cantidad de Comida: " + mod_G.getP_Comida() + "\n"
+                                                                                            + "Comida por KM: " + mod_G.getP_CKiloM() + "\n"
+                                                                                            + "Planeta Asignado: " + mod_G.getP_Planeta() + "\n"
+                                                                                            + "IQ: " + mod_G.getG_IQ() + "\n"
+                                                                                            + "------------------\n");
+
+                                                                                    System.out.print("-----------------\n"
+                                                                                            + "Modificar Gorila\n"
+                                                                                            + "[1] Modificar Nombre\n"
+                                                                                            + "[2] Modificar Grupo Sanguineo\n"
+                                                                                            + "[3] Modificar Sexo\n"
+                                                                                            + "[4] Modificar Altura\n"
+                                                                                            + "[5] Modificar Peso\n"
+                                                                                            + "[6] Modificar Comida por KM\n"
+                                                                                            + "[7] Modificar Planeta Asignado\n"
+                                                                                            + "[8] Modificar Lugar de Nacimiento\n"
+                                                                                            + "[9] Modificar Color de pelo\n"
+                                                                                            + "[10] Salir\n"
+                                                                                            + "Eliga una opcion: ");
+                                                                                    int op_menuMod = sc.nextInt();
+                                                                                    sc = new Scanner(System.in);
+                                                                                    System.out.println();
+                                                                                    switch (op_menuMod) {
+                                                                                        case 1:
+                                                                                            //Modificar Nombre
+                                                                                            System.out.print("----------------\n"
+                                                                                                    + "Modificar Nombre\n\n"
+                                                                                                    + "Ingrese nuevo nombre para el gorila: ");
+                                                                                            String nombre_ModG = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_G.setS_Nombre(nombre_ModG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 2:
+                                                                                            //Modificar Grupo Sanguineo
+                                                                                            //Grupo Sanguineo
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Grupos Sanguineos\n\n"
+                                                                                                    + "Grupos Sanguineos\n"
+                                                                                                    + "[1] A\n"
+                                                                                                    + "[2] B\n"
+                                                                                                    + "[3] AB\n"
+                                                                                                    + "[4] O\n"
+                                                                                                    + "Seleccione nuevo grupo sanguineo: ");
+                                                                                            int op_modGrupoSG = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            if (op_modGrupoSG == 1) {
+                                                                                                mod_G.setS_GSang("A");
+                                                                                            }
+                                                                                            if (op_modGrupoSG == 2) {
+                                                                                                mod_G.setS_GSang("B");
+                                                                                            }
+                                                                                            if (op_modGrupoSG == 3) {
+                                                                                                mod_G.setS_GSang("AB");
+                                                                                            }
+                                                                                            if (op_modGrupoSG == 4) {
+                                                                                                mod_G.setS_GSang("O");
+                                                                                            }
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 3:
+                                                                                            //Modificar Sexo
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Sexo\n\n"
+                                                                                                    + "Tipos de Sexo\n"
+                                                                                                    + "[1] Masculino\n"
+                                                                                                    + "[2] Femenino\n"
+                                                                                                    + "Eliga una opcion: ");
+                                                                                            int op_modSexoG = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            if (op_modSexoG == 1) {
+                                                                                                mod_G.setS_Sexo("Masculino");
+                                                                                            } else {
+                                                                                                mod_G.setS_Sexo("Femenino");
+                                                                                            }
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 4:
+                                                                                            //Modificar Altura
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Altura\n\n"
+                                                                                                    + "Ingrese nueva altura: ");
+                                                                                            double altura_ModG = sc.nextDouble();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_G.setS_Altura(altura_ModG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 5:
+                                                                                            //Modificar Peso
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Peso\n\n"
+                                                                                                    + "Ingrese nuevo peso: ");
+
+                                                                                            int peso_modG = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_G.setS_Peso(peso_modG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 6:
+                                                                                            //Modificar Comida por KM
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Comida por Km\n\n"
+                                                                                                    + "Ingrese nuevo cantidad de comida consumida por KM: ");
+                                                                                            int comida_kmModG = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_G.setP_CKiloM(comida_kmModG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 7:
+                                                                                            //Modificar Planeta
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Planeta Asignado\n\n"
+                                                                                                    + "Ingrese nuevo planeta: ");
+                                                                                            String planeta_ModG = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_G.setP_Planeta(planeta_ModG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 8:
+                                                                                            //Modificar Lugar de Nacimiento
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar Lugar de Nacimiento\n\n"
+                                                                                                    + "Ingrese nuevo lugar de nacimiento: ");
+                                                                                            String lugar_ModG = sc.nextLine();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+                                                                                            mod_G.setP_Nacimiento(lugar_ModG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 9:
+                                                                                            //Modificar IQ
+                                                                                            System.out.print("------------------\n"
+                                                                                                    + "Modificar IQ\n\n"
+                                                                                                    + "Ingrese nuevo IQ: ");
+                                                                                            int iq_ModG = sc.nextInt();
+                                                                                            sc = new Scanner(System.in);
+                                                                                            System.out.println();
+
+                                                                                            while (iq_ModG < 130 || iq_ModG > 139) {
+                                                                                                System.out.println("El IQ de un gorila esta entre (130 - 139).\n"
+                                                                                                        + "Ingrese IQ del gorila: ");
+                                                                                                iq_ModG = sc.nextInt();
+                                                                                                sc = new Scanner(System.in);
+                                                                                                System.out.println();
+
+                                                                                            }
+                                                                                            mod_G.setG_IQ(iq_ModG);
+                                                                                            System.out.println("Se modifico exitosamente el gorila!!\n");
+                                                                                            break;
+                                                                                        case 10:
+                                                                                            //Salir Modificar Monos
+                                                                                            flag_seguirMod2 = false;
+                                                                                            break;
+                                                                                        default:
+                                                                                            System.out.println("Ingrese una opcion valida.\n");
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            break;
+                                                                        case 3:
+                                                                            //Salir Modificar Primate
+                                                                            flag_modP = false;
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese una opcion valida.\n");
+                                                                    }
+                                                                }
                                                                 break;
                                                             case 3:
                                                                 //Eliminar Primate
+                                                                boolean flag_elimPrimate = true;
+                                                                while (flag_elimPrimate) {
+                                                                    System.out.print("-------------------\n"
+                                                                            + "Tipo de Primate\n"
+                                                                            + "[1] Eliminar Mono\n"
+                                                                            + "[2] Eliminar Gorila\n\n"
+                                                                            + "[3] Salir\n"
+                                                                            + "Eliga una opcion: ");
+                                                                    int op_tipoPrimate = sc.nextInt();
+                                                                    sc = new Scanner(System.in);
+                                                                    System.out.println();
+                                                                    switch (op_tipoPrimate) {
+                                                                        case 1:
+                                                                            //Eliminar Mono
+                                                                            String salida_elimMono = "";
+                                                                            salida_elimMono = imprimirMono(salida_elimMono);
+
+                                                                            System.out.print("------------------\n"
+                                                                                    + "Eliminar Mono\n\n"
+                                                                                    + "Lista de Monos\n"
+                                                                                    + salida_elimMono + "\n"
+                                                                                    + "Seleccione mono a eliminar: ");
+                                                                            int op_elimMono = sc.nextInt();
+                                                                            System.out.println();
+                                                                            lista_monos.remove(op_elimMono);
+                                                                            System.out.println("Se elimino exitosamente el mono.\n");
+                                                                            break;
+                                                                        case 2:
+                                                                            //Eliminar Gorila
+                                                                            String salida_ElimGor = "";
+                                                                            salida_ElimGor = imprimirGorila(salida_ElimGor);
+
+                                                                            System.out.print("-------------------\n"
+                                                                                    + "Eliminar Gorila\n\n"
+                                                                                    + "Lista de Gorilas\n"
+                                                                                    + salida_ElimGor + "\n"
+                                                                                    + "Seleccione gorila a eliminar: ");
+                                                                            int op_elimGorila = sc.nextInt();
+                                                                            System.out.println();
+                                                                            lista_gorilas.remove(op_elimGorila);
+                                                                            System.out.println("Se elimino exitosamente el gorila.\n\n");
+                                                                            break;
+                                                                        case 3:
+                                                                            //Salir Sub menu de eliminar
+                                                                            flag_elimPrimate = false;
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese una opcion valida.\n");
+                                                                    }
+                                                                }
+
                                                                 break;
                                                             case 4:
                                                                 //Listar Primates
+                                                                boolean flag_listarPrimate = true;
+                                                                while (flag_listarPrimate) {
+                                                                    System.out.print("-------------------\n"
+                                                                            + "Tipo de Primate\n"
+                                                                            + "[1] Listar Mono\n"
+                                                                            + "[2] Listr Gorila\n\n"
+                                                                            + "[3] Salir\n"
+                                                                            + "Eliga una opcion: ");
+                                                                    int op_tipoPrimate2 = sc.nextInt();
+                                                                    sc = new Scanner(System.in);
+                                                                    System.out.println();
+                                                                    switch (op_tipoPrimate2) {
+                                                                        case 1:
+                                                                            //Listar Mono
+                                                                            String salida_listarMono = "";
+                                                                            salida_listarMono = imprimirMono(salida_listarMono);
+
+                                                                            System.out.print("------------------\n"
+                                                                                    + "Lista de Monos\n"
+                                                                                    + salida_listarMono + "\n");
+                                                                            break;
+                                                                        case 2:
+                                                                            //Listar Gorila
+                                                                            String salida_ElimGor = "";
+                                                                            salida_ElimGor = imprimirGorila(salida_ElimGor);
+
+                                                                            System.out.print("-------------------\n"
+                                                                                    + "Lista de Gorilas\n"
+                                                                                    + salida_ElimGor + "\n");
+                                                                        case 3:
+                                                                            //Salir Sub menu de eliminar
+                                                                            flag_listarPrimate = false;
+                                                                            break;
+                                                                        default:
+                                                                            System.out.println("Ingrese una opcion valida.\n");
+                                                                    }
+                                                                }
                                                                 break;
                                                             case 5:
                                                                 //Salida Menu Monos
@@ -697,7 +1190,7 @@ public class Lab4_MiguelRojasJamilGarcia {
 
                                                             break;
                                                         case 4: //Listar Heli
-                                                            
+
                                                             ImprimirArrayList(lista_medioHeli);
 
                                                             break;
@@ -1302,5 +1795,45 @@ public class Lab4_MiguelRojasJamilGarcia {
             System.out.println("---------------------------------------");
             System.out.println(i + ". " + a.get(i).toString());
         }
+    }
+
+    public static String imprimirMono(String s) {
+
+        String salida = "";
+        for (int i = 0; i < lista_monos.size(); i++) {
+            Mono m = lista_monos.get(i);
+            salida += "[" + i + "] Nombre: " + m.getS_Nombre() + "\n"
+                    + "Grupo Sanguineo: " + m.getS_GSang() + "\n"
+                    + "Sexo: " + m.getS_Sexo() + "\n"
+                    + "Altura: " + m.getS_Altura() + "\n"
+                    + "Peso: " + m.getS_Peso() + "lbs. \n"
+                    + "Cantidad de Comida: " + m.getP_Comida() + "\n"
+                    + "Comida por KM: " + m.getP_CKiloM() + "\n"
+                    + "Planeta Asignado: " + m.getP_Planeta() + "\n"
+                    + "Color de Pelo: " + m.getM_ColorP() + "\n"
+                    + "------------------\n";
+        }
+
+        return salida;
+    }
+
+    public static String imprimirGorila(String s) {
+
+        String salida = "";
+        for (int i = 0; i < lista_gorilas.size(); i++) {
+            Gorila g = lista_gorilas.get(i);
+            salida += "[" + i + "] Nombre: " + g.getS_Nombre() + "\n"
+                    + "Grupo Sanguineo: " + g.getS_GSang() + "\n"
+                    + "Sexo: " + g.getS_Sexo() + "\n"
+                    + "Altura: " + g.getS_Altura() + "\n"
+                    + "Peso: " + g.getS_Peso() + "lbs. \n"
+                    + "Cantidad de Comida: " + g.getP_Comida() + "\n"
+                    + "Comida por KM: " + g.getP_CKiloM() + "\n"
+                    + "Planeta Asignado: " + g.getP_Planeta() + "\n"
+                    + "IQ:  " + g.getG_IQ() + "\n"
+                    + "------------------\n";
+        }
+
+        return salida;
     }
 }
